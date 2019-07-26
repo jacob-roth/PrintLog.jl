@@ -42,8 +42,8 @@ Silent mode.
 macro noprintlog(silent=false)
     @eval begin
         import Base.println, Base.print, Suppressor.@suppress
-        @suppress Base.println(xs...) = println(STDOUT, xs...)
-        @suppress Base.print(xs...) = print(STDOUT, xs...)
+        @suppress Base.println(xs...) = println(stdout, xs...)
+        @suppress Base.print(xs...) = print(stdout, xs...)
     end
 #    silent != :silent &&
 #        info("`print` and `println` are resumed.")
